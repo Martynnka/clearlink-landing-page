@@ -1,46 +1,165 @@
 <!doctype html>
-<html lang="en">
-  <head>
+<html lang="lt">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clearlink - Patikrink ar saugi svetainė</title>
     <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <div class="header">
-          <a href="#" class="logo">ClearLink</a>
-          <div class="header-center">
-              <a href="#">Pagrindinis</a>
-              <a href="#">Kaip veikia</a>
-              <a href="#">Apie mus</a>
-              <a href="#">Pagalba</a>
-          </div>
-          <div class="language-picker js-language-picker">
-            <form action="" class="language-picker__form">
-              <select name="language-picker-select" id="language-picker-select">
-                <option lang="en" value="english" selected>EN</option>
-                <option lang="lt" value="lithuanian">LT</option>
-              </select>
+</head>
+
+<body>
+
+<header>
+    <div class="header">
+
+        <a href="#">
+            <img src="Images/logo.svg" class="logo" alt="Clearlink logo">
+        </a>
+
+        <nav class="header-center" aria-label="Main navigation">
+            <a href="#">Pagrindinis</a>
+            <a href="#">Kaip veikia</a>
+            <a href="#">Apie mus</a>
+            <a href="#">Pagalba</a>
+        </nav>
+
+        <div class="language-picker js-language-picker">
+            <form class="language-picker__form">
+                <select
+                        name="language-picker-select"
+                        id="language-picker-select"
+                        aria-label="Select language">
+
+                    <option lang="lt" value="lithuanian">LT</option>
+                    <option lang="en" value="english" selected>EN</option>
+                </select>
             </form>
-            </div>
-      </div>
-    </header>
+        </div>
 
-    <section class = "section">
-      <div class = "herotext">
-        <h1>Patikrink, ar svetainė saugi prieš paspausdamas.</h1>
-        <p>Apsaugok save nuo sukčiavimo, phishing ir kenksmingų puslapių per kelias sekundes.</p>
-      </div>
+    </div>
+</header>
 
-      <input>
-      <button>Patikrinti</button>
+<main>
+    <section>
+
+        <div class="herotext">
+            <h1>Patikrink, ar svetainė saugi prieš paspausdamas.</h1>
+            <p>
+                Apsaugok save nuo sukčiavimo, phishing ir kenksmingų puslapių per kelias sekundes.
+            </p>
+        </div>
+
+        <div class="card">
+            <input
+                    id="input-el"
+                    type="url"
+                    placeholder="https://example.com"
+                    autocomplete="url"
+                    aria-label="Website URL input"
+                    required>
+            <button type="button">
+                Patikrinti
+            </button>
+        </div>
     </section>
 
+<section class="result-section" aria-labelledby="scan-result-heading">
+    <div class="result-wrap">
+        <article class="result-card is-warning" style="--score: 82;">
+            <div class="result-top">
+                <span class="result-badge">ĮTARTINA</span>
+                <p class="result-score"><strong>82</strong><span>/100</span></p>
+            </div>
+
+            <h2 id="scan-result-heading" class="result-title">Svetainės saugumo rezultatas</h2>
+            <p class="result-url">Nuoroda: <code>https://example.com</code></p>
+
+            <div class="result-progress-block">
+                <div
+                    class="result-progress"
+                    role="progressbar"
+                    aria-label="Saugumo įvertinimas"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="82">
+                    <span class="result-progress-fill"></span>
+                </div>
+            </div>
+
+            <p class="result-summary">
+                Ši svetainė turi keletą įspėjamųjų požymių. Rekomenduojame atidžiai peržiūrėti informaciją prieš tęsiant.
+            </p>
+
+            <ul class="result-checklist" aria-label="Saugumo patikrinimai">
+                <li class="result-check">
+                    <span class="result-check-icon" aria-hidden="true">✓</span>
+                    <span class="result-check-label">Aptiktas HTTPS ryšys</span>
+                    <span class="result-check-status is-pass">Atitinka</span>
+                </li>
+                <li class="result-check">
+                    <span class="result-check-icon" aria-hidden="true">!</span>
+                    <span class="result-check-label">Domenas atrodo įtartinas</span>
+                    <span class="result-check-status is-fail">Neatitinka</span>
+                </li>
+                <li class="result-check">
+                    <span class="result-check-icon" aria-hidden="true">!</span>
+                    <span class="result-check-label">Aptikti peradresavimai</span>
+                    <span class="result-check-status is-fail">Neatitinka</span>
+                </li>
+                <li class="result-check">
+                    <span class="result-check-icon" aria-hidden="true">✓</span>
+                    <span class="result-check-label">Patikra pagal juoduosius sąrašus</span>
+                    <span class="result-check-status is-pass">Atitinka</span>
+                </li>
+            </ul>
+
+            <div class="result-actions">
+                <button type="button" class="result-btn result-btn-primary">Tikrinti kitą nuorodą</button>
+                <button type="button" class="result-btn result-btn-secondary">Pranešti apie svetainę</button>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="result-section" aria-labelledby="scan-result-heading">
+    <div class="result-wrap">
+        <article class="result-card result-card-empty" aria-live="polite">
+            <h2 id="scan-result-heading" class="result-title">Svetainės saugumo rezultatas</h2>
+            <p class="result-empty-text">
+                Įklijuokite svetainės nuorodą aukščiau ir paspauskite <strong>Patikrinti</strong>, kad pamatytumėte saugumo įvertinimą.
+            </p>
+
+            <ul class="result-empty-list" aria-label="Kas bus tikrinama">
+                <li>HTTPS ryšio patikra</li>
+                <li>Domeno struktūros analizė</li>
+                <li>Peradresavimų nustatymas</li>
+                <li>Tikrinimas pagal žinomus rizikos sąrašus</li>
+            </ul>
+        </article>
+    </div>
+</section>
 
 
+    <section class = "sectionA">
+        <div class="cardA">
+            <div class = "box">
+                <img src="Images/world.svg" class="" alt="World logo">
+                <p>Tiesioginė patikra</p>
+            </div>
 
+            <div class = "box">
+                <img src="Images/Wallet.svg" class="" alt="World logo">
+                <p>100 % Nemokama</p>
+            </div>
 
-    <script src="index.js"></script>
-  </body>
+            <div class = "box">
+                <img src="Images/Security.svg" class="" alt="World logo">
+                <p>Privatumo užtikrinimas</p>
+            </div> 
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
 </html>
