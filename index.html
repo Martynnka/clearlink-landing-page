@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clearlink - Patikrink ar saugi svetainė</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -18,23 +21,10 @@
 
         <nav class="header-center" aria-label="Main navigation">
             <a href="#">Pagrindinis</a>
+            <a href="#">Sukčiavimo patikra</a>
             <a href="#">Kaip veikia</a>
             <a href="#">Apie mus</a>
-            <a href="#">Pagalba</a>
         </nav>
-
-        <div class="language-picker js-language-picker">
-            <form class="language-picker__form">
-                <select
-                        name="language-picker-select"
-                        id="language-picker-select"
-                        aria-label="Select language">
-
-                    <option lang="lt" value="lithuanian">LT</option>
-                    <option lang="en" value="english" selected>EN</option>
-                </select>
-            </form>
-        </div>
 
     </div>
 </header>
@@ -57,13 +47,14 @@
                     autocomplete="url"
                     aria-label="Website URL input"
                     required>
+            <p>Ši patikra tikrina tik ryšio saugumą. Norėdami įvertinti galimą sukčiavimo riziką, pasirinkite „Sukčiavimo patikra“ skiltyje viršuje.</p>
             <button type="button">
                 Patikrinti
             </button>
         </div>
     </section>
 
-<section class="result-section" aria-labelledby="scan-result-heading">
+<section class="hide" aria-labelledby="scan-result-heading">
     <div class="result-wrap">
         <article class="result-card is-warning" style="--score: 82;">
             <div class="result-top">
@@ -158,6 +149,47 @@
             </div> 
         </div>
     </section>
+    
+<section class="How-Works-section">
+    <article class="how-works-card">
+        <h2 class="How-Works-section-title">Kaip veikia?</h2>
+
+        <div class="how-works-nocolumn">
+
+            <div class="how-works-box">
+                <h3>1. Įklijuokite nuorodą</h3>
+                <p>Įveskite arba įklijuokite svetainės URL ir pradėkite saugumo patikrą.</p>
+            </div>
+
+            <div class="how-works-box">
+                <h3>2. Tikrinamas HTTPS ryšys</h3>
+                <p>Nustatome, ar svetainė naudoja saugų, šifruotą ryšį.</p>
+            </div>
+
+            <div class="how-works-box">
+                <h3>3. Vertinamas sertifikatas</h3>
+                <p>Patikriname, ar sertifikatas galiojantis ir išduotas patikimos sertifikavimo institucijos.</p>
+            </div>
+
+            <div class="how-works-box">
+                <h3>4. Pateikiamas rezultatas</h3>
+                <p>Rodomas aiškus statusas: Secure, Insecure arba Certificate issue.</p>
+            </div>
+
+        </div>
+    </article>
+</section>
+
+ <div class="footer-basic">
+        <footer>
+            <ul class="list-inline">
+                        <a href="#">
+            <img src="Images/logo.svg" class="logo" alt="Clearlink logo">
+        </a>
+            </ul>
+            <p class="copyright">Clearlink 2026 Visos teisės saugomos.</p>
+        </footer>
+    </div>
 </main>
 
 <script src="script.js"></script>
