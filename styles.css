@@ -464,3 +464,22 @@ header a {
     color:#aaa;
     margin-bottom:0;
 }
+
+.about-us-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #4b4c4d;
+    font-size: 51px;
+}
+
+.about-us-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    box-shadow: 0px 2px 3px black;
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
